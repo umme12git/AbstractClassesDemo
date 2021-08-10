@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleUI
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
+
             /*
              * Todo follow all comments!! 
              */
@@ -32,6 +33,8 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
+            var vehicles = new List<Vehicle>();
+
 
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
@@ -39,14 +42,36 @@ namespace ConsoleUI
              * Set the properties with object initializer syntax
              */
 
+            var car = new Car() { Year = "2011", Make = "Honda", Model = "Accord", HasTrunk = true };
+            var motorcycle = new Motorcycle() { Year = "2009", Make = "Honda", Model = "Honda CB1000X" };
+            Vehicle vanOne = new Car() { Year = "2018", Make = "Toyota", Model = "Sienna", HasTrunk = true };
+            Vehicle vanTwo = new Car() { Year = "2005", Make = "Honda", Model = "Odyssey", HasTrunk = true };
+
+
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate over each of the properties
              */
+            vehicles.Add(car);
+            vehicles.Add(motorcycle);
+            vehicles.Add(vanOne);
+            vehicles.Add(vanTwo);
+
+            foreach (var vehi in vehicles)
+            {
+                Console.WriteLine($" {vehi.Make} {vehi.Year} {vehi.Model}");
+                Console.WriteLine("*****");
+            }
+
+
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
+            car.DriveAbstract();
+            motorcycle.DriveVirtual();
+            
+
+                #endregion
             Console.ReadLine();
         }
     }
