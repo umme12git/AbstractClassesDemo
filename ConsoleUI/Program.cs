@@ -72,7 +72,7 @@ namespace ConsoleUI
             
 
                 #endregion
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }
